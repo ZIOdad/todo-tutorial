@@ -7,6 +7,18 @@
 - 강의 본문: https://docs.claude-hunt.com
 - 수강생 결과물 공유: https://claude-hunt.com
 
+## 프로젝트 소개
+
+브라우저에서 동작하는 할일 관리 앱입니다. 별도의 백엔드 없이 할일 목록을 브라우저 `localStorage` 에 저장하므로, 새로고침해도 데이터가 유지됩니다.
+
+주요 기능:
+
+- 할일 추가 · 수정 · 삭제, 완료 토글 (빈 내용으로 수정하면 삭제)
+- 우선순위(높음 · 보통 · 낮음), 마감일, 카테고리(업무 · 개인 · 쇼핑) 지정
+- 텍스트 검색, 상태 필터(전체 · 진행중 · 완료), 카테고리 필터
+- 생성일순 · 이름순 · 마감일순 정렬
+- 라이트 / 다크 테마 (기본값은 시스템 설정, 입력 중이 아닐 때 `d` 키로 전환)
+
 ## 기술 스택
 
 - Next.js 16 (App Router, Turbopack)
@@ -16,24 +28,41 @@
 - TypeScript / ESLint / Prettier
 - 패키지 매니저: bun 1.3.6
 
-## 시작하기
+## 실행 방법
+
+### 사전 준비
+
+- [bun](https://bun.sh) 1.3 이상
+
+### 개발 서버 실행
 
 ```bash
+git clone https://github.com/ZIOdad/todo-tutorial.git
+cd todo-tutorial
 bun install
 bun dev
 ```
 
 개발 서버는 기본적으로 [http://localhost:3000](http://localhost:3000) 에서 열립니다.
 
-자주 쓰는 스크립트:
+### 프로덕션 빌드
 
 ```bash
-bun dev            # 개발 서버 실행
-bun run build      # 프로덕션 빌드
-bun run start      # 빌드 결과 실행
-bun run lint       # ESLint
-bun run typecheck  # tsc --noEmit
-bun run format     # Prettier 포맷팅
+bun run build
+bun run start
+```
+
+### 자주 쓰는 스크립트
+
+```bash
+bun dev             # 개발 서버 실행
+bun run build       # 프로덕션 빌드
+bun run start       # 빌드 결과 실행
+bun run lint        # ESLint
+bun run typecheck   # tsc --noEmit
+bun run format      # Prettier 포맷팅
+bun run test        # Vitest 테스트 1회 실행
+bun run test:watch  # Vitest 감시 모드
 ```
 
 ## 챕터별 시작 브랜치
